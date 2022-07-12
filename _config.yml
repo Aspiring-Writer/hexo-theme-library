@@ -2,40 +2,60 @@ favicon:
   href: /blog/favicon.png # Favicon of your site.
   type: image/png # Icon type, possible values are(image/png, image/vnd.microsoft.icon, image/x-icon, image/gif)
 
+search: https://ecosia.org/search?q= # https://www.google.com/search?q==
 order_by: date # date,-date,title,url,...
 head: '<!--<script src="" async></script>-->' # Add anything to <head></head>
 
 archives:
   switch: false # true,false Switching this function.
-  categories: [算法,游戏] # Only the categories you set will be displayed on the archive page.
+  categories: [] # Only the categories you set will be displayed on the archive page.
 
 menu:
   Archives: archives
   About: about.html
 
 footer_link:
-  折影轻梦: https://nexmoe.com/
-  还有书籍: https://github.com/Yet-The-Books/hexo-theme-yet-the-books
+  Yet the Books: https://github.com/Yet-The-Books/hexo-theme-yet-the-books
+  My Blog: https://aspiring-writer.github.io
 
 github:
-  repo: nexmoe/books # nexmoe/books
+  repo: # Aspiring-Writer/hexo-theme-library
   edit: true # true,false
   history: true # true,false
 
-comment: gitalk # 评论框，目前支持 gitalk,gitment,valine,disqus,disqusjs,changyan,livere,DiscussBot,utteranc,giscus 使用 false 可以关闭
+analytics: # Statistics system, currently supports Google analytics.js statistics, Google Tag Manager statistics, CNZZ statistics, Tencent statistics, 51.La statistics, Baidu statistics
+  google_site_id: #<ID>
+  gtags_site_id: #<ID>
+  cnzz_site_id: #<ID>
+  tencent_site_id: #<ID>
+  la_site_id: #<ID>
+  baidu_site_id: #<ID>
+  gtm_container_id: #<ID>
+
+cdn: # Here you can modify the CDN of the library used by the site
+  disqusjs:
+    css: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css
+    js: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js
+  gitalk:
+    css: https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css
+    js: https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js
+  valine:
+    js: https://cdn.jsdelivr.net/npm/valine
+
+comment: utteranc # Comment box, currently supports gitalk, gitment, valine, disqus, disqusjs, changyan, livere, DiscussBot, utteranc, giscus Use false to close
 
 gitalk:
-  admin: nexmoe # 拥有对该repo进行操作的 GitHub username
-  owner: nexmoe # 持有该 repo 的 GitHub username
-  repo: nexmoe.github.io # 存放评论的 issue 所在的 repo
-  clientID: 80b2453b6d5f37ad6225 # GitHub Client ID
-  clientSecret: 43e99fa852795c9a7b3eb924b2558c64b84bbdeb # GitHub Client Secret
+  admin: # Has the GitHub username to operate on this repo
+  owner: # The GitHub username that holds the repo
+  repo: # The repo where the issue where comments are stored
+  clientID: # GitHub Client ID
+  clientSecret: # GitHub Client Secret
 
 gitment:
-  owner: nexmoe # 持有该 repo 的 GitHub username
-  repo: nexmoe.github.io # 存放评论的 issue 所在的 repo
-  clientID: 80b2453b6d5f37ad6225 # GitHub Client ID
-  clientSecret: 43e99fa852795c9a7b3eb924b2558c64b84bbdeb # GitHub Client Secret
+  owner: # The GitHub username that holds the repo
+  repo: # The repo where the issue where comments are stored
+  clientID: # GitHub Client ID
+  clientSecret: # GitHub Client Secret
 
 valine: 
   appId: <API_ID> # leancloud application app id
@@ -46,27 +66,27 @@ disqus:
 
 disqusjs:
   shortname: <shortname> # 你的 Disqus shortname
-  sitename: <sitename> # 你站点的名称，将会显示在「评论基础模式」的 header 中；该配置应该和 Disqus Admin - Settings - General - Website Name 一致
-  api: https://disqus.skk.moe/disqus/ # DisqusJS 请求的 API Endpoint，通常情况下你应该配置一个 Disqus API 的反代并填入反代的地址。你也可以直接使用 DISQUS 官方 API 的 Endpoint https://disqus.com/api/，或是使用SukkaW搭建的 Disqus API 反代 Endpoint https://disqus.skk.moe/disqus/。
-  apikey: <api_key> # DisqusJS 向 API 发起请求时使用的 API Key，你应该在配置 Disqus Application 时获取了 API Key;DisqusJS 支持填入一个 包含多个 API Key 的 Array，在每次请求时会随机使用其中一个；如果你只需要填入一个 API Key，则可以填入 String 或 Array。
-  admin: <admin> # 你的站点的 Disqus Moderator 的用户名（也就是你的用户名）。你可以在 Disqus - Settings - Account - Username 获取你的 Username
-  adminLabel: <adminLabel> # 你想显示在 Disqus Moderator Badge 中的文字。该配置应和 Disqus Admin - Settings - Community - Moderator Badge Text 相同
+  sitename: <sitename> # The name of your site, which will be displayed in the "Comment Basic Mode" header; this configuration should be consistent with Disqus Admin - Settings - General - Website Name
+  api: https://disqus.skk.moe/disqus/ # API Endpoint requested by DisqusJS, usually you should configure a Disqus API reverse generation and fill in the reverse generation address. You can also directly use the Endpoint of DISQUS official API https://disqus.com/api/, or use the Disqus API built by SukkaW to reverse the Endpoint https://disqus.skk.moe/disqus/.
+  apikey: <api_key> # The API Key used by DisqusJS to initiate a request to the API. You should obtain the API Key when configuring the Disqus Application; DisqusJS supports filling in an Array containing multiple API Keys, which will be randomly used in each request One of them; if you only need to fill in one API Key, you can fill in String or Array.
+  admin: <admin> # The username of the Disqus Moderator for your site (that is, your username). You can get your Username in Disqus - Settings - Account - Username
+  adminLabel: <adminLabel> # The text you want to display in the Disqus Moderator Badge. The configuration should be the same as Disqus Admin - Settings - Community - Moderator Badge Text
 
 changyan:
-  appid: <APP_ID> # 畅言的 APPID
-  conf: <CONF> # 畅言的 CONF
-  thread_key_type: path # 可选 id 或 path
+  appid: <APP_ID> # Changyan's APPID
+  conf: <CONF> # Talking CONF
+  thread_key_type: path # optional id or path
 
-livere:
-  data_uid: <data_uid> # 你的来必力 UID，可以在来必力后台获取
+deliver:
+  data_uid: <data_uid> # Your Laibili UID, you can get it in Lapili background
 
 DiscussBot:
-  id: <id> # 站点id
-  comments: 5 # 可能是限制每位用户单页面评论最多条数？
-  color: # 评论框主色调
-  dislike: 0 # 显示差评按钮
-  icons: 0 # 图标主题
-  diff: 0 # 每位用户name不同颜色
+  id: <id> # site id
+  comments: 5 # Maybe limit the maximum number of comments per user per page?
+  color: # The main color of the comment box
+  dislike: 0 # show the dislike button
+  icons: 0 # icon theme
+  diff: 0 # different color for each user name
 
 utteranc: # https://utteranc.es/
   repo: [ENTER REPO HERE]
